@@ -1,0 +1,15 @@
+.ProfileActions {
+    display: flex;
+    align-items: center;
+    .ProfileActionButton {
+        & {
+            min-width: calc(50% - 5px);
+        }
+        &:first-child {
+            margin-right: 5px;
+        }
+        &:last-child {
+            margin-left: 5px;
+        }
+    }
+}

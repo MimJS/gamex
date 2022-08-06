@@ -1,0 +1,16 @@
+.GameList {
+    &__Title {
+        margin-left: 5px;
+        width: fit-content;
+        font-weight: 600;
+    }
+    &__In {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .GameListItem:not(:nth-child(1)):not(:nth-child(2)) {
+            margin-top: 10px;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.GameListItem {
+    & {
+        background: var(--color__secondary);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex: 1 0 calc(50% - 5px);
+        max-width: calc(50% - 5px);
+        cursor: pointer;
+        transition: all 0.1s linear;
+    }
+    &--wheel {
+        .GameListItem__Background {
+            background: url("https://game2xx.online/static/media/wheel.518ff3c3.jpg") no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+    &--dice {
+        .GameListItem__Background {
+            background: url("https://game2xx.online/static/media/dice1.c578d0da.jpg") no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+    &--double {
+        .GameListItem__Background {
+            background: url("https://game2xx.online/static/media/double.00fbdee0.jpg") no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+    &__In {
+        width: 100%;
+    }
+    &__Background {
+        height: 150px;
+        width: 100%;
+    }
+    &__Name {
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        font-weight: 300;
+        font-size: 22px;
+        padding: 10px 0;
+    }
+    &:active {
+        transform: scale(0.95);
+    }
+}
