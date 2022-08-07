@@ -6,3 +6,4 @@ export { PaddingWrapper } from "./PaddingWrapper/PaddingWrapper";
 export { Loading } from "./Loading/Loading";
 export { ProfileActionButton } from "./ProfileActionButton/ProfileActionButton";
 export { ProfileActions } from "./ProfileActions/ProfileActions";
+export { MenuItems } from "./MenuItems/MenuItems";

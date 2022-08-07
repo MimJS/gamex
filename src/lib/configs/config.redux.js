@@ -17,3 +17,8 @@ export const GAME_SET_NAME = "game/setName";
 export const GAME_SET_DATA = "game/setData";
 export const GAME_SET_GAMELIST = "game/setGameList";
 export const GAME_SET_GAMES_ONLINE = "game/setGamesOnline";
+
+// ui.reducer.js:
+export const UI_SET_VIEW = "ui/setView";
+export const UI_SET_MODAL = "ui/setModal";
+export const UI_SET_POPOUT = "ui/setPopout";

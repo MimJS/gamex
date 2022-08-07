@@ -1,24 +1,17 @@
 import { Root } from "@vkontakte/vkui";
-import { useState } from "react";
-import { ACTIVE_VIEWS, VIEW_HOME } from "./lib/configs/config.vkui";
+import { VIEW_HOME, VIEW_MENU } from "./lib/configs/config.vkui";
 import { HomeView } from "./pages/Home/Home.view";
 import "./lib/styles/index.scss";
+import { useSelector } from "react-redux";
+import { MenuView } from "./pages/Menu/Menu.view";
 
 export const App = () => {
-  const [activeView, setActiveView] = useState(VIEW_HOME);
-  const setView = (name) => {
-    if (activeView == name) {
-      return;
-    }
-    if (!ACTIVE_VIEWS.includes(name)) {
-      return;
-    }
-    setActiveView(name);
-  };
+  const activeView = useSelector((s) => s.ui.activeView);
 
   return (
     <Root activeView={activeView}>
       <HomeView id={VIEW_HOME} />
+      <MenuView id={VIEW_MENU} />
     </Root>
   );
 };
