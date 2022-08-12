@@ -1,0 +1,16 @@
+.HashString {
+    & {
+        width: 100%;
+    }
+    &__In {
+        width: 100%;
+        text-align: center;
+        & > div {
+            color: var(--color__fourth);
+            font-size: 14px;
+        }
+    }
+    &__check {
+        margin-top: 5px;
+    }
+}

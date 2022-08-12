@@ -12,8 +12,8 @@ export const UserBalance = ({ size = "s", title }) => {
         {title ? <div className="UserBalance--title">{title}</div> : null}
         <span>{formatCoins(balance)}</span>
         <Icon28MoneyWadOutline
-          width={size == "s" ? 14 : 30}
-          height={size == "s" ? 14 : 30}
+          width={size == "s" ? 15 : 30}
+          height={size == "s" ? 15 : 30}
         />
       </div>
     </div>

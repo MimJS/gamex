@@ -30,6 +30,13 @@
             background-position: center center;
         }
     }
+    &--down7up {
+        .GameListItem__Background {
+            background: url("https://game2xx.online/static/media/dice.355eaea4.jpg") no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
     &__In {
         width: 100%;
     }

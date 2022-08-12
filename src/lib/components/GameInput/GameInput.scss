@@ -1,0 +1,60 @@
+.GameInput {
+    & {
+    }
+    &__Buttons {
+        & {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .ButtonItem {
+            flex: 1 0 calc(20% - 5px);
+            max-width: calc(20% - 5px);
+            border: none;
+            border-radius: 12px;
+            background: var(--color__secondary);
+            padding: 8px 0;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.1s linear;
+            &:active {
+                opacity: 0.7;
+            }
+        }
+    }
+    &__Input {
+        & {
+            position: relative;
+            margin-top: 10px;
+        }
+        .Input {
+            .FormField__border {
+                border: 1px solid var(--field_border) !important;
+            }
+        }
+        &--buttons {
+            & {
+                position: absolute;
+                right: 5px;
+                top: 4px;
+                z-index: 2;
+            }
+            .ButtonItem {
+                width: 50px;
+                height: 36px;
+                border-radius: 12px;
+                background: var(--color__secondary);
+                outline: none;
+                border: none;
+                cursor: pointer;
+                transition: all 0.1s linear;
+                &:not(:first-child) {
+                    margin-left: 5px;
+                }
+                &:active {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}

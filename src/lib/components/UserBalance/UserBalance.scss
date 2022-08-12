@@ -5,8 +5,11 @@
     }
     &--sz {
         &-s {
+            .UserBalance__In {
+                padding: 10px;
+            }
             span {
-                font-size: 16px;
+                font-size: 18px;
             }
         }
         &-l {

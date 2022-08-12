@@ -10,13 +10,20 @@ const init = {
   gameData: null,
   gameList: [
     {
+      id: "wheel",
       name: "wheel",
     },
     {
+      id: "double",
       name: "double",
     },
     {
+      id: "dice",
       name: "dice",
+    },
+    {
+      id: "down7up",
+      name: "down 7 up",
     },
   ],
   gamesOnline: 0,

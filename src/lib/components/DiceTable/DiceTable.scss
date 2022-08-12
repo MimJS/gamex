@@ -1,0 +1,51 @@
+.DiceTable {
+    & {
+        width: 100%;
+        height: fit-content;
+        border-radius: 10px;
+        background: var(--color__secondary);
+    }
+    &__In {
+        padding: 10px;
+    }
+    &__Title {
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    &__Table {
+        & {
+            margin-top: 10px;
+        }
+        .Table {
+            &__Row {
+                & {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                &:not(:first-child) {
+                    margin-top: 10px;
+                }
+                &:first-of-type {
+                    .Button {
+                        width: calc(50% - 5px);
+                        color: white;
+                        &:first-of-type {
+                            background: var(--color__dice_odd);
+                        }
+                        &:last-of-type {
+                            background: var(--color__dice_even);
+                        }
+                    }
+                }
+                &:not(:first-of-type) {
+                    .Button {
+                        background: var(--color__dice_number);
+                        color: #fff;
+                        width: calc(33% - (20px / 3));
+                    }
+                }
+            }
+        }
+    }
+}

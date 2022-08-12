@@ -1,0 +1,17 @@
+.TimerBlock {
+    & {
+        border-radius: 12px;
+        background: var(--color__secondary);
+    }
+    &__In {
+        & {
+            padding: 60px 0;
+            text-align: center;
+        }
+        span {
+            font-size: 70px;
+            font-weight: 700;
+            color: var(--color__fourth);
+        }
+    }
+}

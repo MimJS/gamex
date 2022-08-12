@@ -1,0 +1,47 @@
+.GameHistory {
+    & {
+        border-radius: 12px;
+        background: var(--color__secondary);
+    }
+    &__In {
+        & {
+            padding: 10px;
+        }
+        & > span {
+            color: var(--color__fourth);
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 500;
+        }
+    }
+    &__List {
+        margin-top: 8px;
+    }
+    &__List--in {
+        display: flex;
+        align-items: center;
+    }
+    &__Item {
+        & {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            text-align: center;
+            flex: 0 0 42px;
+            cursor: pointer;
+            transition: all .1s linear;    
+        }
+        & > span {
+            color: #fff;
+            font-size: 21px;
+            line-height: 42px;
+            vertical-align: center;
+        }
+        &:not(:first-of-type) {
+            margin-left: 5px;
+        }
+        &:active {
+            transform: scale(.95);
+        }
+    }
+}

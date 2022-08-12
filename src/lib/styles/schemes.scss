@@ -1,8 +1,13 @@
 body {
     --background_content: #000000 !important;
     --header_background: #000000 !important;
+    --field_background: rgba(16, 18, 18, 0.2) !important;
 
     // custom vars
     --color__secondary: #101212;
     --color__fourth: #7f8692;
+
+    --color__dice_odd: #004041;
+    --color__dice_even: #7a676e;
+    --color__dice_number: #727a7b;
 }

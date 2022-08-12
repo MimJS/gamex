@@ -1,0 +1,21 @@
+.WaitingBlock {
+    & {
+        border-radius: 12px;
+        background: var(--color__secondary);
+    }
+    &__In {
+        & {
+            text-align: center;
+            padding: 55px 0;
+        }
+        .Icon {
+            display: inline-block;
+        }
+        span {
+            font-size: 24px;
+            font-weight: 300;
+            display: inline-block;
+            margin-top: 5px;
+        }
+    }
+}
