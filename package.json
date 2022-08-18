@@ -10,6 +10,7 @@
     "@vkontakte/icons": "^1.182.0",
     "@vkontakte/vk-bridge": "^2.7.0",
     "@vkontakte/vkui": "^4.34.2",
+    "axios": "^0.27.2",
     "fastify": "^4.4.0",
     "fastify-easy-route": "^1.0.12",
     "fastify-websocket": "^4.3.0",

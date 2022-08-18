@@ -5,6 +5,7 @@ import { LoadingTexts } from "../../configs/config.text";
 import "./Loading.scss";
 import bridge from "@vkontakte/vk-bridge";
 import { USER_SET_VK_DATA } from "../../configs/config.redux";
+import { getUserData } from "../../modules/serverRequests";
 
 export const Loading = () => {
   const [textIndex, setTextIndex] = useState(0);
@@ -26,6 +27,7 @@ export const Loading = () => {
           type: USER_SET_VK_DATA,
           payload: vkData,
         });
+        await getUserData(vkData.id)
       } else {
         // error protocol
       }

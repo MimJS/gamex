@@ -10,8 +10,7 @@ const start = async () => {
       middleware: "src/lib/middleware/vkAuth.js",
     });
     await fastify.register(require("@fastify/cors"), {
-      origin: "*",
-      methods: "POST",
+      origin: "*"
     })
     await fastify.register(require('@fastify/mysql'), {
       connectionString: 'mysql://gamexAdmin:Maikal_1546855dm@109.120.182.86/GAMEX-DATABASE'

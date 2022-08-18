@@ -1,15 +1,16 @@
 import {
+  USER_DEC_BALANCE,
+  USER_INC_BALANCE,
   USER_SET_SERVER_DATA,
   USER_SET_VK_DATA,
   USER_SET_VK_TOKEN,
   USER_SET_VK_TOKEN_RIGHTS,
+  USER_UPDATE_BALANCE,
 } from "../../configs/config.redux";
 
 const init = {
   vkData: null,
-  serverData: {
-    balance: 1000,
-  },
+  serverData: null,
   vkToken: null,
   vkTokenRights: null,
 };
@@ -29,6 +30,27 @@ export const UserReducer = (state = init, action) => {
       return { ...state, vkToken: payload };
     case USER_SET_VK_TOKEN_RIGHTS:
       return { ...state, vkTokenRights: payload };
+    case USER_UPDATE_BALANCE:
+      return {
+        ...state,
+        serverData: { ...state.serverData, balance: payload },
+      };
+    case USER_INC_BALANCE:
+      return {
+        ...state,
+        serverData: {
+          ...state.serverData,
+          balance: Number(state.serverData.balance + payload),
+        },
+      };
+    case USER_DEC_BALANCE:
+      return {
+        ...state,
+        serverData: {
+          ...state.serverData,
+          balance: Number(state.serverData.balance - payload),
+        },
+      };
     default:
       return state;
   }

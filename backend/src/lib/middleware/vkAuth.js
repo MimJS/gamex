@@ -1,9 +1,8 @@
-const { VkAppVersion } = require("../configs/config.main");
+const { VkAppVersion, VkAppId } = require("../configs/config.main");
 const { checkVkHashValid } = require("../modules/utils");
 
 const execute = async (fastify, command, request, reply) => {
   try {
-    // Тут мы производим нужную проверку
     if (command.auth) {
       const { body } = request;
       if (!body) {
@@ -26,8 +25,11 @@ const execute = async (fastify, command, request, reply) => {
       if (vkAppId !== vkAppId) {
         return reply.send({ status: "error", error_message: "invalid params" });
       }
-      if (vkAppVersion < VkAppVersion) {
+      if (vkAppVersion !== VkAppVersion) {
         return reply.send({ status: "warning", warningType: "newAppVersion" });
+      }
+      if(vkAppId !== VkAppId) {
+        return reply.send({ status: "error", error_message: "invalid params" });
       }
       if (!checkVkHashValid(vkUserId, vkQueryString)) {
         return reply.send({ status: "error", error_message: "vkSign invalid" });

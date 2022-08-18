@@ -5,6 +5,9 @@ export const USER_SET_VK_DATA = "user/setVkData";
 export const USER_SET_SERVER_DATA = "user/setServerData";
 export const USER_SET_VK_TOKEN = "user/setVkToken";
 export const USER_SET_VK_TOKEN_RIGHTS = "user/setVkTokenRights";
+export const USER_UPDATE_BALANCE = "user/updateBalance";
+export const USER_INC_BALANCE = "user/incBalance";
+export const USER_DEC_BALANCE = "user/decBalance";
 
 // ws.reducer.js:
 export const WS_INIT = "ws/setWSData";

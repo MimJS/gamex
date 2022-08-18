@@ -3,8 +3,12 @@
         background: var(--color__secondary);
         border-radius: 12px;
         cursor: pointer;
+        transition: all 0.1s linear;
         &:not(:first-of-type) {
             margin-top: 10px;
+        }
+        &:active {
+            transform: scale(0.99);
         }
     }
 }

@@ -4,6 +4,7 @@ import {
   PanelHeader,
   PanelHeaderContent,
 } from "@vkontakte/vkui";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
   GameList,
@@ -13,11 +14,19 @@ import {
   UserBalance,
 } from "../../lib/components";
 import { AppName } from "../../lib/configs/config.main";
+import { getUserData } from "../../lib/modules/serverRequests";
 
 export const HomePanel = ({ id }) => {
   const { vkData, serverData } = useSelector((s) => {
     return { vkData: s.user.vkData, serverData: s.user.serverData };
   });
+
+  useEffect(() => {
+    const updateUser = setInterval(() => {
+      getUserData(vkData.id);
+    }, 10000);
+    return () => clearInterval(updateUser);
+  }, []);
 
   if (!vkData || !serverData) {
     return <Loading />;

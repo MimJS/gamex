@@ -9,6 +9,7 @@ import "./ProfileActions.scss";
 import { useDispatch } from "react-redux";
 import { UI_SET_VIEW } from "../../configs/config.redux";
 import { VIEW_MENU } from "../../configs/config.vkui";
+import { getAdBonus, getButtonBonus } from "../../modules/serverRequests";
 
 export const ProfileActions = () => {
   const dispatch = useDispatch();
@@ -20,16 +21,27 @@ export const ProfileActions = () => {
     });
   };
 
+  const getBonus = (type) => {
+    if (type === "button") {
+      getButtonBonus();
+    }
+    if (type === "ad") {
+      getAdBonus();
+    }
+  };
+
   return (
     <>
       <div className="ProfileActions">
         <ProfileActionButton
           icon={<Icon36GiftOutline />}
           text={"Получить бонус"}
+          onClick={() => getBonus("button")}
         />
         <ProfileActionButton
           icon={<Icon36VideoOutline />}
           text={"Бонус за рекламу"}
+          onClick={() => getBonus("ad")}
         />
       </div>
       <div className="ProfileActions">
