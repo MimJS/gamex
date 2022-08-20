@@ -1,6 +1,7 @@
 import {
   UI_SET_MODAL,
   UI_SET_POPOUT,
+  UI_SET_SNACKBAR,
   UI_SET_VIEW,
 } from "../../configs/config.redux";
 import { ACTIVE_VIEWS, VIEW_HOME } from "../../configs/config.vkui";
@@ -11,6 +12,9 @@ const init = {
     [VIEW_HOME]: null,
   },
   modal: {
+    [VIEW_HOME]: null,
+  },
+  snackbar: {
     [VIEW_HOME]: null,
   },
 };
@@ -33,6 +37,11 @@ export const UIReducer = (state = init, action) => {
       return {
         ...state,
         popout: { ...state.popout, [payload.view]: payload.popout },
+      };
+    case UI_SET_SNACKBAR:
+      return {
+        ...state,
+        snackbar: { ...state.popout, [payload.view]: payload.snackbar },
       };
     default:
       return state;

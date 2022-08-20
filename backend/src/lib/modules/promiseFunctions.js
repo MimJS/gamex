@@ -127,10 +127,26 @@ const decMoney = (mysql, userId, sum) =>
     );
   });
 
+const getTop = (mysql) =>
+  new Promise((rs, rj) => {
+    mysql.query(
+      "SELECT day_win, id FROM users WHERE ban=0 ORDER BY day_win DESC LIMIT 100",
+      [],
+      (onResult = (err, res) => {
+        if (err) {
+          rj(err);
+        } else {
+          rs(res);
+        }
+      })
+    );
+  });
+
 module.exports = {
   getUser,
   canTakeAdBonus,
   canTakeButtonbonus,
   addMoney,
   decMoney,
+  getTop,
 };

@@ -14,3 +14,7 @@ export { GameHistory } from "./GameHistory/GameHistory";
 export { GameInput } from "./GameInput/GameInput";
 export { DiceTable } from "./DiceTable/DiceTable";
 export { UserBet } from "./UserBet/UserBet";
+export { CustomSnackbar } from "./CustomSnackbar/CustomSnackbar";
+export { AboutRating } from "./AboutRating/AboutRating";
+export { RatingCell } from "./RatingCell/RatingCell";
+export { MyRating } from "./MyRating/MyRating";

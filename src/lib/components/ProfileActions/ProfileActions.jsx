@@ -8,7 +8,7 @@ import {
 import "./ProfileActions.scss";
 import { useDispatch } from "react-redux";
 import { UI_SET_VIEW } from "../../configs/config.redux";
-import { VIEW_MENU } from "../../configs/config.vkui";
+import { VIEW_MENU, VIEW_RATING } from "../../configs/config.vkui";
 import { getAdBonus, getButtonBonus } from "../../modules/serverRequests";
 
 export const ProfileActions = () => {
@@ -20,6 +20,13 @@ export const ProfileActions = () => {
       payload: VIEW_MENU,
     });
   };
+
+  const openTopDay = () => {
+    return dispatch({
+      type: UI_SET_VIEW,
+      payload: VIEW_RATING,
+    });
+  }
 
   const getBonus = (type) => {
     if (type === "button") {
@@ -48,6 +55,7 @@ export const ProfileActions = () => {
         <ProfileActionButton
           icon={<Icon28CrownOutline width={36} height={36} />}
           text={"Топ дня"}
+          onClick={openTopDay}
         />
         <ProfileActionButton
           icon={<Icon28MenuOutline width={36} height={36} />}

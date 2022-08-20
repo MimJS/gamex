@@ -16,7 +16,13 @@ const init = {
 };
 
 /* examle serverData:
-    balance: Number
+        "id": 587919434,
+        "balance": 1876104,
+        "last_ad_view": 1660854806050,
+        "last_bonus": 1660856103761,
+        "ban": 0,
+        "day_win": 0,
+        "last_repost_id": 0
 */
 
 export const UserReducer = (state = init, action) => {

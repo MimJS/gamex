@@ -1,0 +1,9 @@
+.MyRating {
+    & {
+        border-radius: 12px;
+        background: var(--color__secondary);
+    }
+    &__In {
+        padding: 5px 0;
+    }
+}

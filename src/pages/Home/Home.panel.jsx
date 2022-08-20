@@ -7,6 +7,7 @@ import {
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
+  CustomSnackbar,
   GameList,
   Loading,
   PaddingWrapper,
@@ -14,6 +15,7 @@ import {
   UserBalance,
 } from "../../lib/components";
 import { AppName } from "../../lib/configs/config.main";
+import { VIEW_HOME } from "../../lib/configs/config.vkui";
 import { getUserData } from "../../lib/modules/serverRequests";
 
 export const HomePanel = ({ id }) => {
@@ -49,6 +51,7 @@ export const HomePanel = ({ id }) => {
         <ProfileActions />
         <GameList />
       </PaddingWrapper>
+      <CustomSnackbar viewName={VIEW_HOME} />
     </Panel>
   );
 };

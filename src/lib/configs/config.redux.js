@@ -25,3 +25,4 @@ export const GAME_SET_GAMES_ONLINE = "game/setGamesOnline";
 export const UI_SET_VIEW = "ui/setView";
 export const UI_SET_MODAL = "ui/setModal";
 export const UI_SET_POPOUT = "ui/setPopout";
+export const UI_SET_SNACKBAR = "ui/setSnackbar";

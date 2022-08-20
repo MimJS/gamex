@@ -7,9 +7,9 @@ module.exports = {
         sql,
         (onResult = (err, res) => {
           if (err) {
-            reply.send({ status: false, error: err });
+            console.log(err);
           } else {
-            reply.send({ status: true, res });
+            console.log(res);
           }
         })
       );

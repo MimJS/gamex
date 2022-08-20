@@ -1,6 +1,7 @@
 import axios from "axios";
 import { AppID, AppVersion } from "../configs/config.main";
 import {
+  UI_SET_SNACKBAR,
   USER_INC_BALANCE,
   USER_SET_SERVER_DATA,
 } from "../configs/config.redux";
@@ -8,9 +9,12 @@ import {
   SERVER_AD_BONUS_GET,
   SERVER_BUTTON_BONUS_GET,
   SERVER_DEV_URL,
+  SERVER_GET_RATING,
   SERVER_USER_GET,
 } from "../configs/config.server";
+import { VIEW_HOME } from "../configs/config.vkui";
 import { store } from "../redux";
+import { formatCoins } from "./utils";
 
 const SERVER_STATUS = {
   SUCCESS: "success",
@@ -20,16 +24,20 @@ const SERVER_STATUS = {
 
 export const serverRequest = async (type, payload = {}) => {
   console.log(SERVER_DEV_URL + type);
-  const { data } = await axios.post(SERVER_DEV_URL + type, {
-    auth: {
-      vkAppId: AppID,
-      vkQueryString: window.location.search.replace("?", ""),
-      vkAppVersion: AppVersion,
-      vkUserId: store.getState()?.user?.vkData?.id,
-    },
-    payload,
-  });
-  return data;
+  try {
+    const { data } = await axios.post(SERVER_DEV_URL + type, {
+      auth: {
+        vkAppId: AppID,
+        vkQueryString: window.location.search.replace("?", ""),
+        vkAppVersion: AppVersion,
+        vkUserId: store.getState()?.user?.vkData?.id,
+      },
+      payload,
+    });
+    return data;
+  } catch (e) {
+    return false;
+  }
 };
 
 export const getUserData = async () => {
@@ -52,6 +60,27 @@ export const getButtonBonus = async () => {
         type: USER_INC_BALANCE,
         payload: bonusSum,
       });
+      store.dispatch({
+        type: UI_SET_SNACKBAR,
+        payload: {
+          view: VIEW_HOME,
+          snackbar: {
+            type: SERVER_STATUS.SUCCESS,
+            text: `+ ${formatCoins(bonusSum)}`,
+          },
+        },
+      });
+    } else {
+      store.dispatch({
+        type: UI_SET_SNACKBAR,
+        payload: {
+          view: VIEW_HOME,
+          snackbar: {
+            type: SERVER_STATUS.ERROR,
+            text: `Бонус можно получить раз в 30 минут`,
+          },
+        },
+      });
     }
     return { result, bonusSum };
   }
@@ -65,7 +94,37 @@ export const getAdBonus = async () => {
         type: USER_INC_BALANCE,
         payload: bonusSum,
       });
+      store.dispatch({
+        type: UI_SET_SNACKBAR,
+        payload: {
+          view: VIEW_HOME,
+          snackbar: {
+            type: SERVER_STATUS.SUCCESS,
+            text: `+ ${formatCoins(bonusSum)}`,
+          },
+        },
+      });
+    } else {
+      store.dispatch({
+        type: UI_SET_SNACKBAR,
+        payload: {
+          view: VIEW_HOME,
+          snackbar: {
+            type: SERVER_STATUS.ERROR,
+            text: `Рекламу можно смотреть раз в 5 минут`,
+          },
+        },
+      });
     }
     return { result, bonusSum };
+  }
+};
+
+export const getRating = async () => {
+  const { status, data } = await serverRequest(SERVER_GET_RATING);
+  if (status == SERVER_STATUS.SUCCESS) {
+    return data;
+  } else {
+    return null;
   }
 };

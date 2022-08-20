@@ -8,7 +8,7 @@ module.exports = (fastify) => {
         last_bonus BIGINT DEFAULT 0 ,
         ban INT(1) DEFAULT 0 ,
         day_win BIGINT DEFAULT 0 ,
-        last_repost_id BIGINT DEFAULT 0 
+        last_repost_id BIGINT DEFAULT 0
     )`,
     function onResult(err, result) {
       console.log(err || result);

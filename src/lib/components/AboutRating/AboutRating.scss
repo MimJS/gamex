@@ -1,0 +1,51 @@
+.AboutRating {
+    & {
+        border-radius: 12px;
+        background: var(--color__secondary);
+    }
+    &__In {
+        padding: 15px;
+    }
+    &__Title {
+        display: flex;
+        align-items: center;
+        span {
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    }
+    &__Description {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    &__PrizeInfo {
+        & {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .PrizeBlock {
+            & {
+                flex-basis: calc(50% - 0.5px);
+                text-align: center;
+            }
+            &__Title {
+                color: var(--color__fourth);
+                font-size: 12px;
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+            &__Value {
+                margin-top: 3px;
+                text-transform: uppercase;
+            }
+            &__Separator {
+                width: 1px;
+                height: 30px;
+                background: var(--color__fourth);
+            }
+        }
+    }
+}

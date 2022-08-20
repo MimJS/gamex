@@ -1,0 +1,46 @@
+.RatingCell {
+    & {
+        padding: 0 5px;
+    }
+    &__Before {
+        display: flex;
+        align-items: center;
+    }
+    &__Position {
+        & {
+            width: 30px;
+        }
+        &--my {
+            border: 2px solid var(--color__fourth);
+        }
+    }
+    &__Prize {
+        & {
+            text-align: center;
+        }
+        .Prize {
+            &__Title {
+                color: var(--color__fourth);
+                font-size: 11px;
+                text-transform: uppercase;
+            }
+            &__Value {
+                margin-top: 2px;
+                text-transform: uppercase;
+                color: white;
+            }
+        }
+    }
+    &__Balance {
+        display: flex;
+        align-items: center;
+        .Icon {
+            margin-left: 5px;
+        }
+    }
+    &__UserName {
+    }
+    & .SimpleCell__main {
+        margin-left: 10px;
+    }
+}

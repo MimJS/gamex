@@ -1,5 +1,9 @@
-import './PaddingWrapper.scss'
+import "./PaddingWrapper.scss";
 
-export const PaddingWrapper = ({ children }) => {
-  return <div className="PaddingWrapper">{children}</div>;
+export const PaddingWrapper = ({ children, style }) => {
+  return (
+    <div className="PaddingWrapper" style={style}>
+      {children}
+    </div>
+  );
 };
