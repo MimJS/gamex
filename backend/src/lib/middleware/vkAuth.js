@@ -1,7 +1,7 @@
 const { VkAppVersion, VkAppId } = require("../configs/config.main");
 const { checkVkHashValid } = require("../modules/utils");
 
-const execute = async (fastify, command, request, reply) => {
+const execute = async (_, command, request, reply) => {
   try {
     if (command.auth) {
       const { body } = request;
