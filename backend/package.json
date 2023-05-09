@@ -9,13 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fastify/cors": "^8.1.0",
-    "@fastify/mysql": "^4.0.0",
-    "@fastify/websocket": "^5.0.0",
-    "fastify": "^4.4.0",
+    "@fastify/cors": "^8.2.1",
+    "@fastify/mysql": "^4.1.0",
+    "@fastify/websocket": "^8.0.0",
+    "fastify": "^4.17.0",
     "fastify-easy-route": "^1.0.12",
     "fastify-websocket": "^4.3.0",
     "fastify-ws": "^1.0.3",
-    "wsapix": "^0.5.0"
+    "wsapix": "^0.5.2"
   }
 }

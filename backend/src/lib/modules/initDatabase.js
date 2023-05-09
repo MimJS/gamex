@@ -1,6 +1,6 @@
 module.exports = (fastify) => {
-  fastify.mysql.query(
-    `CREATE TABLE IF NOT EXISTS users
+    fastify.mysql.query(
+        `CREATE TABLE IF NOT EXISTS users
     (
         id INT(18) NOT NULL PRIMARY KEY UNIQUE,
         balance BIGINT(255) DEFAULT 0,
@@ -10,12 +10,12 @@ module.exports = (fastify) => {
         day_win BIGINT DEFAULT 0 ,
         last_repost_id BIGINT DEFAULT 0
     )`,
-    function onResult(err, result) {
-      console.log(err || result);
-    }
-  );
-  fastify.mysql.query(
-    `CREATE TABLE IF NOT EXISTS games
+        function onResult(err, result) {
+            console.log(err || result);
+        },
+    );
+    fastify.mysql.query(
+        `CREATE TABLE IF NOT EXISTS games
     (
         id INT(18) NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
         name VARCHAR(255) NOT NULL,
@@ -24,12 +24,12 @@ module.exports = (fastify) => {
         checkString VARCHAR(255) NOT NULL,
         active INT(1) DEFAULT 1
     )`,
-    function onResult(err, result) {
-      console.log(err || result);
-    }
-  );
-  fastify.mysql.query(
-    `CREATE TABLE IF NOT EXISTS gamesBet
+        function onResult(err, result) {
+            console.log(err || result);
+        },
+    );
+    fastify.mysql.query(
+        `CREATE TABLE IF NOT EXISTS gamesBet
     (
         id INT(18) NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
         gameName VARCHAR(255) NOT NULL,
@@ -37,8 +37,8 @@ module.exports = (fastify) => {
         betType VARCHAR(255) NOT NULL,
         betSum BIGINT NOT NULL
     )`,
-    function onResult(err, result) {
-      console.log(err || result);
-    }
-  );
+        function onResult(err, result) {
+            console.log(err || result);
+        },
+    );
 };

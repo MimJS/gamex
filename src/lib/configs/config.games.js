@@ -1,3 +1,3 @@
 export const GameMaxBet = {
-  dice: 100000000,
+    dice: 100000000,
 };
