@@ -11,6 +11,7 @@
     &__Title {
         font-size: 13px;
         text-transform: uppercase;
+        margin: 8px 0 16px 8px;
     }
     &__Table {
         & {
@@ -27,7 +28,7 @@
                     margin-top: 10px;
                 }
                 &:first-of-type {
-                    .Button {
+                    .vkuiButton {
                         width: calc(50% - 5px);
                         color: white;
                         &:first-of-type {
@@ -39,7 +40,7 @@
                     }
                 }
                 &:not(:first-of-type) {
-                    .Button {
+                    .vkuiButton {
                         background: var(--color__dice_number);
                         color: #fff;
                         width: calc(33% - (20px / 3));

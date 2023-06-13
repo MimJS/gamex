@@ -27,8 +27,9 @@
             position: relative;
             margin-top: 10px;
         }
-        .Input {
-            .FormField__border {
+        .vkuiInput {
+            .vkuiFormField__border,
+            .vkuiFocusVisible {
                 border: 1px solid var(--field_border) !important;
             }
         }

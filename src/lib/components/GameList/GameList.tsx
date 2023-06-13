@@ -1,12 +1,22 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+import { ROUTES_PATH } from '../../configs/config.router';
+
+import { gameListSelector } from '../../redux/slices/game/game.selectors';
+
 import { GameListItem } from '../GameListItem/GameListItem';
+
 import './GameList.scss';
 
 export const GameList = () => {
-    const gameList = useSelector((s) => s.game.gameList);
+    const navigate = useNavigate();
+    const gameList = useSelector(gameListSelector);
 
-    const openGame = (gameId) => {
+    const openGame = (gameId: string) => {
         if (gameId === 'dice') {
+            navigate(ROUTES_PATH.DICE);
         }
     };
 

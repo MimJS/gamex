@@ -8,7 +8,13 @@ export interface VKDataCountry {
     title: string;
 }
 
-export interface VKDataInterface {
+export interface VKDataUser {
+    first_name: string;
+    last_name: string;
+    photo_100: string;
+}
+
+export interface VKDataInterface extends VKDataUser {
     id: number;
     bdate?: string;
     bdate_visibility?: number;
@@ -17,9 +23,6 @@ export interface VKDataInterface {
     photo_200: string;
     photo_max_orig?: string;
     sex: number;
-    photo_100: string;
-    first_name: string;
-    last_name: string;
     can_access_closed?: boolean;
     is_closed: boolean;
 }

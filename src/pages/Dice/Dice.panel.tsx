@@ -1,5 +1,7 @@
+import React, { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Panel, PanelHeader, PanelHeaderBack, PanelHeaderContent } from '@vkontakte/vkui';
-import { useState } from 'react';
+
 import {
     DiceTable,
     GameHistory,
@@ -12,10 +14,17 @@ import {
     WaitingBlock,
 } from '../../lib/components';
 
-export const DicePanel = ({ id }) => {
-    const [betSum, setBetSum] = useState('');
+interface DicePanelProps {
+    id: string;
+}
 
-    const onClose = () => {};
+export const DicePanel: FC<DicePanelProps> = ({ id }) => {
+    const navigate = useNavigate();
+    const [betSum, setBetSum] = useState<string | number>('');
+
+    const onClose = () => {
+        navigate(-1);
+    };
 
     return (
         <Panel id={id}>
@@ -39,19 +48,19 @@ export const DicePanel = ({ id }) => {
                     }}
                 />
                 <UserBet
-                    vkData={{ first_name: 'Mikhail', last_name: 'Mateevsky' }}
+                    vkData={{ first_name: 'Mikhail', last_name: 'Mateevsky', photo_100: '' }}
                     betSum={1000000}
                     value={5}
                     style={{ backgroundColor: 'var(--color__dice_number)' }}
                 />
                 <UserBet
-                    vkData={{ first_name: 'Mikhail', last_name: 'Mateevsky' }}
+                    vkData={{ first_name: 'Mikhail', last_name: 'Mateevsky', photo_100: '' }}
                     betSum={100000000}
                     value={'Чет'}
                     style={{ backgroundColor: 'var(--color__dice_even)' }}
                 />
                 <UserBet
-                    vkData={{ first_name: 'Mikhail', last_name: 'Mateevsky' }}
+                    vkData={{ first_name: 'Mikhail', last_name: 'Mateevsky', photo_100: '' }}
                     betSum={150000}
                     value={'Нечет'}
                     style={{ backgroundColor: 'var(--color__dice_odd)' }}
